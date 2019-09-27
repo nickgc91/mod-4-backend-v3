@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
 
     def index 
-        scores = User.all
+        scores = Score.all
         render json: scores
     end
 
