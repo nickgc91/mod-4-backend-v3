@@ -2,7 +2,14 @@ class UsersController < ApplicationController
 
     def index 
         users = User.all
-        render json: users
+        render json: users.map { |user|
+            { playerTotal: User.all.length, user: {id: user.id,
+                username: user.username,
+                password_digest: user.password_digest,
+                highScore: user.getHighScore(user.scores)}
+                }
+            }
+            
     end
 
     def create 
