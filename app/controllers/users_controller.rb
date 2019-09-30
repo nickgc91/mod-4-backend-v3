@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         render json: users.map { |user|
             { playerTotal: User.all.length, user: {id: user.id,
                 username: user.username,
-                password_digest: user.password_digest,
+               password_digest: user.password_digest,
                 highScore: user.getHighScore(user.scores)}
                 }
             }
@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     end
 
     def create 
-        user = User.new(strong_params)
-
+        user = User.create(strong_params)
+         render json: user, status: :created
         if user.save
             render json: user, status: :created
           else
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     private
 
     def strong_params
-        params.require(:user).permit(:username, :password_digest)
+        params.require(:user).permit(:user, :password_digest)
     end
 
 end
