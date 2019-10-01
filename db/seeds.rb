@@ -11,12 +11,12 @@ User.destroy_all
 Score.destroy_all
 
 users = [
-  { username: "hc123", password_digest: '123456'},
-  { username: "nc123", password_digest: '123456'},
-  { username: "ms123", password_digest: '123456'},
-  { username: "aa123", password_digest: '123456'},
-  { username: "eh123", password_digest: '123456'},
-  { username: "rc123", password_digest: '123456'},
+  { username: "hc123", password: '123456'},
+  { username: "nc123", password: '123456'},
+  { username: "ms123", password: '123456'},
+  { username: "aa123", password: '123456'},
+  { username: "eh123", password: '123456'},
+  { username: "rc123", password: '123456'},
 ]
 
 scores = [
