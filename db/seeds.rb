@@ -20,17 +20,17 @@ users = [
 ]
 
 scores = [
-  { user_id: 1, runtime: 35 },
-  { user_id: 2, runtime: 55 },
-  { user_id: 2, runtime: 77 },
-  { user_id: 3, runtime: 80 },
-  { user_id: 3, runtime: 12 },
-  { user_id: 4, runtime: 23 },
-  { user_id: 4, runtime: 44 },
-  { user_id: 5, runtime: 102 },
-  { user_id: 5, runtime: 56 },
-  { user_id: 6, runtime: 73 },
-  { user_id: 6, runtime: 39 },
+  { user_id: 1, runtime: 55 },
+  { user_id: 2, runtime: 67 },
+  { user_id: 2, runtime: 89 },
+  { user_id: 3, runtime: 99 },
+  { user_id: 3, runtime: 88 },
+  { user_id: 4, runtime: 60 },
+  { user_id: 4, runtime: 78 },
+  { user_id: 5, runtime: 64 },
+  { user_id: 5, runtime: 70 },
+  { user_id: 6, runtime: 90 },
+  { user_id: 6, runtime: 77 },
 ]
 
 User.create users
