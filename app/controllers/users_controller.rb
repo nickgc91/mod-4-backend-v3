@@ -28,7 +28,7 @@ class UsersController < ApplicationController
         # byebug
         if user.save
             render json: user, status: :created
-            score = Score.create(user_id: user.id, runtime: 1000)
+            score = Score.create(user_id: user.id, runtime: 0)
         else
             render json: { user_errors: user.errors.full_messages }, status: :unprocessable_entity
         end 
@@ -37,14 +37,12 @@ class UsersController < ApplicationController
 
 
     def save_game 
-        #we'll have to create an option to either create new user or if user already exists match user
-        #to an account
         user = User.find_by(username: score_params[:username])
-        if user.scores[0].runtime == 1000
+        if user.scores[0].runtime == 0
             score = Score.find_by(user_id: user.id)
             score.update(user_id: user.id, runtime: score_params[:highScore])
             render json: score, status: :created
-        elsif user.scores[0].runtime != 1000
+        elsif user.scores[0].runtime != 0
             Score.create(user_id: user.id, runtime: score_params[:highScore])
             render json: score, status: :created
         else
